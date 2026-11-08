@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR GENIUS</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:20px;background:#0b1120;color:white;font-family:Arial,sans-serif}
+header{text-align:center;padding:20px}
+header h1{color:#00e5ff;font-size:30px}
+header p{color:#aab4c8}
+.box{background:#18243a;padding:20px;border-radius:15px;margin-bottom:20px}
+.stats{display:flex;gap:10px}
+.card{background:#263752;padding:15px;border-radius:12px;flex:1;text-align:center}
+.card h2{color:#00e5ff}
+button{width:100%;padding:15px;background:#00d6a0;border:0;border-radius:10px;font-size:17px;font-weight:bold;margin-top:12px}
+select{width:100%;padding:14px;border-radius:8px;margin-top:10px;font-size:17px}
+#status{color:#00e5a0;text-align:center;margin-top:15px}
+</style>
+</head>
+<body>
+<header>
+<h1>QR GENIUS</h1>
+<p>Smart Classroom Answer System</p>
+</header>
+<div class="box">
+<h2>Teacher Dashboard</h2>
+<div class="stats">
+<div class="card"><h2>40</h2><p>Students</p></div>
+<div class="card"><h2 id="total">0</h2><p>Answers</p></div>
+</div>
+</div>
+<div class="box">
+<h2>Question Control</h2>
+<p>Select Correct Answer:</p>
+<select id="correct">
+<option value="A">Answer A</option>
+<option value="B">Answer B</option>
+<option value="C">Answer C</option>
+<option value="D">Answer D</option>
+</select>
+<button onclick="startScanner()">START SCANNER</button>
+<p id="status">System Ready</p>
+</div>
+<div class="box">
+<h2>Live Results</h2>
+<p>Correct Answers: <span id="right">0</span></p>
+<p>Wrong Answers: <span id="wrong">0</span></p>
+<button onclick="resetSystem()">RESET SYSTEM</button>
+</div>
+<script>
+function startScanner(){
+ document.getElementById("status").innerText="Scanner module is being prepared!";
+}
+function resetSystem(){
+ document.getElementById("total").innerText=0;
+ document.getElementById("right").innerText=0;
+ document.getElementById("wrong").innerText=0;
+ document.getElementById("status").innerText="System Ready";
+}
+</script>
+</body>
+</html>
